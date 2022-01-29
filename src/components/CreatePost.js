@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import {firestore} from '../firebase';
 import {useFormInput} from '../hooks';
 
