@@ -23,7 +23,7 @@ function Home() {
 
   return (
     <div className="home">
-      <h1>React Blog</h1>
+      <h1 style={styles.heading}>React Blog</h1>
       <div id="blog-by">Owais</div>
       {posts.map((post, index) => (
         <div className="post" key={`post-${index}`}>
@@ -38,3 +38,11 @@ function Home() {
 }
 
 export default Home;
+  
+// Inline styling CSS
+const styles ={
+  heading:{
+    marginTop:30,
+    fontSize:56,
+  },
+};

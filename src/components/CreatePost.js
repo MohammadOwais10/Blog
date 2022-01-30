@@ -1,5 +1,6 @@
 import {firestore} from '../firebase';
 import {useFormInput} from '../hooks';
+import cssForBtn from './Button.module.css'; /*css Module Apply here for button  so import file here*/
 
 function CreatePost() {
   // const [title, setTitle] = useState();
@@ -53,7 +54,7 @@ function CreatePost() {
           < textarea {...content} />
         </div>
 
-        <button className="create-post-btn">Create Post</button>
+         <button className={cssForBtn.createPostBtn}>Create Post</button>  {/*css Module Apply here for button */}
 
       </form>
     </div>
