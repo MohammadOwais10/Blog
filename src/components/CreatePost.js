@@ -1,6 +1,24 @@
 import {firestore} from '../firebase';
 import {useFormInput} from '../hooks';
-import cssForBtn from './Button.module.css'; /*css Module Apply here for button  so import file here*/
+// import cssForBtn from './Button.module.css'; /*css Module Apply here for button  so import file here*/
+import styled,{css} from 'styled-components';
+
+//here we do dynamic styling by styled components using props
+const StyleButton=styled.button`
+   height: 33px;
+    background: ${(props)=>props.primary ? '#4caf50' :'blue'};  // here we condition if button primary color show blue, if not then green
+    border: 0;
+    color: #fff;
+    padding: 8px;
+    font-size: 15px;
+    border-radius: 3px;
+    cursor: pointer;
+    ${(props) =>
+    props.primary &&
+    css`
+    border:4px solid ${props.ngColor};     // or border:4px solid red;            
+    `};
+`;
 
 function CreatePost() {
   // const [title, setTitle] = useState();
@@ -54,7 +72,9 @@ function CreatePost() {
           < textarea {...content} />
         </div>
 
-         <button className={cssForBtn.createPostBtn}>Create Post</button>  {/*css Module Apply here for button */}
+         {/* <button className={cssForBtn.createPostBtn}>Create Post</button>   */}    {/*css Module Apply here for button */}
+         
+         <StyleButton primary ngColor="yellow">Create Post</StyleButton> 
 
       </form>
     </div>
